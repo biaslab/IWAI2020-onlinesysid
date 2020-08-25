@@ -103,8 +103,8 @@ function ruleVariationalNLARXIn1PNPPPP(g :: Function,
     ϕ = (S + s*Jx')'*mW*(my - s*mη*mu)
 
 	# Update global approximating point
-	global approxx = pinv(Φ)*ϕ
 	global approxx = inv(Φ + 1e-6*Matrix{Float64}(I, size(Φ)))*ϕ
+	global approxθ = mθ
 
     return Message(Multivariate, GaussianWeightedMeanPrecision, xi=ϕ, w=Φ)
 end
