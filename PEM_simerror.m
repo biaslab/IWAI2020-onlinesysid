@@ -30,18 +30,14 @@ load('models/sscanon_model.mat')
 
 %% Predict
 
-% Collect validation data
-val_data = iddata(input_val', output_val', 1/fs);
-
-% 1-step ahead predictions
-predictions = predict(sscanon, val_data, 1);
-pred_states = predictions.OutputData;
+% Simulate systems
+pred_states = sim(sscanon, input_val');
 
 % Prediction error
 pred_error = (output_val' - pred_states).^2;
 
 % Save predictions
-save("results/results_sscanon_ksteppred.mat", "pred_states", "pred_error");
+save("results/results_sscanon_simulation.mat", "pred_states", "pred_error");
 
 %% Visualize
 
