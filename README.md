@@ -2,15 +2,15 @@
 
 Code and experiments for the paper entitled
 
-"Online system identification in a Duffing oscillator by free energy minimisation" ,
+_"Online system identification in a Duffing oscillator by free energy minimisation"_ ,
 
 which is to be presented at the International Workshop on Active Inference 2020.
 
 #### Content
 
-- `FEM_prederror.ipynb` is a Jupyter notebook containing the method described in the paper. It uses [ForneyLab.jl](https://github.com/biaslab/ForneyLab.jl) and a custom node called "NLARX" provided here (`NLARX-node` folder). If you don't have Jupyter installed, you can read the notebook by opening `FEM_prederror.html` in a browser.
+- `FEM_prederror.ipynb` and `FEM_simerror.ipynb` are Jupyter notebooks containing the method described in the paper. The first is a 1-step ahead prediction error experiment and the other a simulation error experiment. It uses [ForneyLab.jl](https://github.com/biaslab/ForneyLab.jl) and a custom node called "NLARX" provided here (`NLARX-node` folder). If you don't have Jupyter installed, you can read the notebook by opening `FEM_prederror.html` or `FEM_simerror.html` in a browser.
 
-- `PEM_prederror.m` is a baseline method implemented using Matlab's System Identification Toolbox. The trained model is stored in `models/sscanon_model.mat` and can be opened in the Toolbox via `models/sscanon.sid`. Results can be loaded directly via `results/results_sscanon.mat`.
+- `PEM_prederror.m` and `PEM_simerror.m` are baseline methods implemented using Matlab's System Identification Toolbox. The trained model is stored in `models/narx_sigmoidnet4.mat`. Results can be loaded directly via `results/results_narx_sigmoidnet4_ksteppred.mat` or `results/results_narx_sigmoidnet4_simulation.mat`.
 
 - Data comes from the [Nonlinear Benchmark](http://nonlinearbenchmark.org/), specifically the Silverbox problem.
 
