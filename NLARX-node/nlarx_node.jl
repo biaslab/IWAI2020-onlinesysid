@@ -47,7 +47,6 @@ mutable struct NLatentAutoregressiveX <: SoftFactor
 
     function NLatentAutoregressiveX(y, θ, x, η, u, γ; g::Function, id=generateId(NLatentAutoregressiveX))
         @ensureVariables(y, x, θ, η, u, γ)
-		global nonlinear_g = g
         self = new(id, Array{Interface}(undef, 6), Dict{Symbol,Interface}(), g)
         addNode!(currentGraph(), self)
         self.i[:y] = self.interfaces[1] = associate!(Interface(self), y)
