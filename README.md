@@ -4,7 +4,7 @@ Code and experiments for the paper entitled
 
 _"Online system identification in a Duffing oscillator by free energy minimisation"_ ,
 
-which is to be presented at the International Workshop on Active Inference 2020.
+presented at the [International Workshop on Active Inference 2020](https://iwaiworkshop.github.io/).
 
 #### Content
 
